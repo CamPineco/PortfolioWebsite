@@ -1,0 +1,432 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", "sans-serif";
+    box-sizing: border-box;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{ 
+    background: #080808;
+    color: #fff;
+}
+
+#header{
+
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/fondoo.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container{
+    padding: 10px 10%; /*el menu se aleja del borde*/
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*me tiro el menu todo hacia la esquina superior derecha*/
+}
+
+.logo{
+    width: 140px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    /*me separo todo mas prolijo uno al lado del otro con espacios intermedios*/
+
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    /*pal hipervinculo*/
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0; /*linea de color escondida*/
+    height: 3px;
+    background: #1b914c;
+    position: absolute; /*por esto, arriba en nav ul li a puse relative*/
+    left: 0;
+    bottom:-6px;
+    /*todo esto agrega una linea de color abajo de cada titulo de pagina*/
+    /*esa linea es la que va a aparecer y desaparecer cuando pasemos el puntero por arriba*/
+    transition: 0.5s; /*aparece y desaparece*/
+}
+
+nav ul li a:hover::after{
+    width: 100%; /*linea de color visible*/
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{
+    color: #1b914c;
+}
+/*----------------about-----------------*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row{
+    display: flex; /*space side by side*/
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%; /*the width of the column will be 35%*/
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px; /*esquinas redondas*/
+}
+
+.about-col-2{
+    flex-basis: 60%; /*con esto, 5% entre ambas, ya que el otro era 35%*/
+}
+
+.sub-title{ /*about me text*/
+    font-size: 60px;
+    font-weight: 600;
+    color:#fff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px; /*top, left and right, bottom*/
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer; /*indica un link, por ende cambia el puntero*/
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0; /*hidden*/
+    height: 3px;
+    background: #1b914c;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%; /*visible*/
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0; /*top and botton, left and right*/
+}
+.tab-contents ul li span{
+    color: #247a48;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none; /*hidde all the tab contents*/
+}
+.tab-contents.active-tab{
+    display: block; /*visible*/
+}
+
+/*---------------services--------------*/
+#services{
+    padding:  30px 0; /*top and bottom, left and right*/
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s; /*degrade cuando pasa el puntero, va de la mano con la transicion sobre y*/
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div i h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{ /*las cajitas van a tener una transicion de degrade y movimiento hacia arriba*/
+    background: #1b914c;
+    transform: translateY(-10px); /*it will move the box*/
+}
+
+/*----------portfolio-------------*/ 
+#portfolio{
+    padding: 50px 0; /*top and bottom, left and right*/
+
+
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    /*same css que services-list*/
+}
+.work{
+    border-radius: 10px;
+    position: relative; 
+    overflow: hidden;
+}
+.work img{ /*todas prolijas*/
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s; /*tiempo de transicion para el zoom de la img*/
+}
+
+.layer{
+    width: 100%;
+    height: 0; /*hidden*/
+    background: linear-gradient(rgba(0,0,0,0.6), #1b914c); /*primer color: negro, 60% opacity*/
+    border-radius: 10px;
+    position: absolute; /*para que el texto se despliegue sobre la imagen tenemos que poner position absolute*/
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    /*para el texto en el centro va lo siguiente*/
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    padding: 0 40px; 
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s; /*tiempo de transicion para que aparezca todo el texto sobre la img*/
+
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #1b914c;
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /*circulo blanco*/
+    text-align: center;
+}
+
+.work:hover img{
+    transform: scale(1.1); /*pasamos el puntero y hace un zoom a la imagen*/
+}
+.work:hover .layer{
+    height: 100%; /*visible*/
+}
+
+.btn{
+    display: block;
+    margin: 50px auto; /*top and bottom, left and right*/
+    width: fit-content;
+    border: 1px solid #1b914c;
+    padding: 14px 50px; /*espacio adentro del boton*/
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #1b914c;
+}
+/*-----------------contact-------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%; /*espacio de 5% entre ambas columnas*/
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #1b914c;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color:#1b914c;
+    transform: translateY(-5px);
+}
+
+.btn.btn2{ /*dowload CV*/
+    display: inline-block;
+    background: #1b914c;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 6px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copyright i{
+    color:#1b914c;
+}
+
+/*-------------------css for small screens-----------------*/
+nav .fas{
+    display: none; /*siempre van a estar escondidos hasta que se abra en un celular*/
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(img/fondoo\ -\ copia\ \(3\).jpg);/*poner foto para celular*/ 
+    }
+    
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display: block; /*visible*/
+        font-size: 25px;
+    }
+    /*menu hamburguesa - ARREGLAR*/
+    nav ul{ 
+        background:#1b914c;
+        position: fixed;
+        top: 0;
+        right: -200px; /*hidden the side navigation bar*/
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s; /*se esconde y aparece suavemente*/
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{ /*manda el icon de la cruz para arriba de todo a la derecha*/
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    /*about*/
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size{
+            font-size: 16px;
+            margin-right: 20px;
+        }
+    }
+
+    /*contact*/
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+}
+/*MSG SUCCESSFULLY!*/
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}

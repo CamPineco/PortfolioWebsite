@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/d91633ec3e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="img/meahre.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i> <!--menu hamburguesa abierto-->
+
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i> <!---menu hamburguesa cerrado--->
+            </nav>
+            <div class="header-text">
+                <p>Front End Developer</p>
+                <h1>Hola, soy <span>Camila Pineda</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-----------about---------->
+    <div id="about">
+        <div class="container">
+            <div class="row"> <!--columnas-->
+                <div class="about-col-1">
+                    <img src="img/lain (2).jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Tengo 23 años y actualmente estoy estudiando una tecnicatura en programación. Cursé el programa "Codo a Codo - FullStack Python" en 2022 y estoy buscando
+                    el área en la que me quiero especializar. <br> En mi tiempo libre soy artista. </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <!--onclick es para que cuando nosotros apretamos despliegue el contenido, opentab es una mini funcioncita para esto que va a seguir los id correspondientes-->
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Front End</span><br> HTML, CSS, JS (actualmente aprendiendo Node.js)</li>
+                            <li><span>MySQL</span><br>Actualmente realizando un curso asincronico</li>
+                            <li><span>C</span><br>C básico para Arduino</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 - presente</span><br>Artsci - blog website sobre arte y ciencia</li>
+                            <li><span>2023 - presente</span><br>Portfolio website</li>
+                            <li><span>2022</span><br>Proyecto grupal final para Codo a Codo</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - presente</span><br>Tecnicatura en Programación Informática - UNSAM</li>
+                        </ul>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+    </div>
+
+    <!-----------------services------------------>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Amplia creatividad y capacidad para comprender el diseño que se desea y llevarlo a cabo.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Espacio para nuevos conocimientos</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, laudantium molestias cupiditate ab placeat temporibus, quam nostrum necessitatibus sunt tenetur, eaque sint sapiente sit quo in. Cumque neque nostrum asperiores.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Espacio para nuevos conocimientos</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum praesentium minima ipsam optio dolor laudantium. Mollitia iure expedita, repellat odio, distinctio eligendi, totam accusamus at dolorem molestiae possimus! Dolorem, quas.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------portfolio--------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="img/Anime.jpg"><!--img 1-->
+                    <div class="layer">
+                        <h3>Portfolio Website</h3>
+                        <p>Este sitio me permite seguir practicando las tecnologías que voy aprendiendo e ir actualizándolo constantemente.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><!--external link icon-->
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/Anime.jpg"><!--img 2-->
+                    <div class="layer">
+                        <h3>Blog Website</h3>
+                        <p>Un blog que conecta mis dos pasiones: arte y ciencia.</p>
+                        <a href="https://campineco.github.io/blogwebsite/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><!--external link icon-->
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/Anime.jpg"><!--img 3-->
+                    <div class="layer">
+                        <h3>Proyecto grupal final - Codo a Codo 2022</h3>
+                        <p>Pequeño prototipo para emprendimiento personal de arte. Actualmente sin imágenes ya que la marca cambió de estética. Pendiente de actualización.</p>
+                        <a href="https://campineco.github.io/tpocodoacodo2022/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><!--external link icon-->
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">Volver al inicio</a>
+        </div>
+    </div>
+    <!----------------------contact----------------------->
+    <div id="contact">
+        <div class="container">
+            <!--va la info en dos columnas, una a la izquierda y otra a la derecha-->
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>rociocamilapineda@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/polar_canvas/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/camila-pineda-33073318b/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="img/CV IT 2023.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <!--fix google sheets and sent message problems!!!!-->
+                    <form name="submit-to-google-sheet"> <!--google sheets connected with js-->
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="Submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Polar Canvas. Made with <i class="fa-solid fa-heart"></i> by Camila Pineda</p>
+        </div>
+    </div>
+
+</body>
+</html>
