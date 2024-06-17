@@ -32,6 +32,10 @@ body{
     text-align: center;
 }
 
+.blink{
+    animation: blinker 1s linear infinite;
+}
+
 #header{
 
     width: 100%;
@@ -373,6 +377,12 @@ form .btn2{
 nav .fas{
     display: none; /*siempre van a estar escondidos hasta que se abra en un celular*/
 }
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 
 @media only screen and (max-width: 600px){
     #header{
